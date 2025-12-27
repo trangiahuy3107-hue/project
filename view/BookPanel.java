@@ -77,13 +77,13 @@ public class BookPanel extends JPanel {
 
         // ===== UPDATE QUANTITY =====
         btnUpdate.addActionListener(e -> {
-            int row = table.getSelectedRow();   // 🔴 BẮT BUỘC CÓ DÒNG NÀY
+            int row = table.getSelectedRow();   
             if (row == -1) {
                 JOptionPane.showMessageDialog(this, "Chọn sách để cập nhật!");
                 return;
             }
 
-            String bookId = model.getValueAt(row, 0).toString(); // S01, S02
+            String bookId = model.getValueAt(row, 0).toString(); 
             int qty;
 
             try {
@@ -107,7 +107,7 @@ public class BookPanel extends JPanel {
         txtQty.setText("");
     }
 
-    // ===== GET MODEL (NẾU MAINFRAME CẦN) =====
+    // ===== GET MODEL =====
     public DefaultTableModel getModel() {
         return model;
     }
