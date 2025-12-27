@@ -16,9 +16,11 @@ public class MainFrame extends JFrame {
         ReportPanel reportPanel = new ReportPanel();
         StudentPanel studentPanel = new StudentPanel();
         BorrowPanel borrowPanel = new BorrowPanel(reportPanel, bookPanel);
+        SearchBookPanel searchBookPanel = new SearchBookPanel();
 
         tab.add("Sách", bookPanel);
         tab.add("Sinh viên", studentPanel);
+        tab.add("Tìm kiếm sách", searchBookPanel);
         tab.add("Mượn/Trả", borrowPanel);
         tab.add("Báo cáo", reportPanel);
 
@@ -29,4 +31,3 @@ public class MainFrame extends JFrame {
         SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true));
     }
 }
-
