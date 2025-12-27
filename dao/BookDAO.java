@@ -20,7 +20,7 @@ public class BookDAO {
 
             while (rs.next()) {
                 model.addRow(new Object[]{
-                        rs.getString("id"),      // MÃ SÁCH (S01)
+                        rs.getString("id"),     
                         rs.getString("title"),
                         rs.getString("author"),
                         rs.getInt("quantity")
@@ -39,7 +39,7 @@ public class BookDAO {
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, id);     // S01
+            ps.setString(1, id);     
             ps.setString(2, title);
             ps.setString(3, author);
             ps.setInt(4, qty);
@@ -60,7 +60,7 @@ public class BookDAO {
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, qty);
-            ps.setString(2, bookId); // S01
+            ps.setString(2, bookId); 
 
             return ps.executeUpdate() > 0;
 
