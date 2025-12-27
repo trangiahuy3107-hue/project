@@ -50,11 +50,11 @@ public class StudentPanel extends JPanel {
         // ===== ACTION =====
         btnAdd.addActionListener(e -> addStudent());
 
-        loadData(); // 🔥 QUAN TRỌNG
+        loadData(); 
     }
 
     private void loadData() {
-        model.setRowCount(0); // clear table
+        model.setRowCount(0); 
         List<Student> list = StudentDAO.getAll();
 
         for (Student s : list) {
@@ -71,7 +71,7 @@ public class StudentPanel extends JPanel {
                 txtClass.getText())) {
 
             JOptionPane.showMessageDialog(this, "Thêm thành công");
-            loadData(); // 🔥 reload bảng
+            loadData(); 
         }
     }
 }
