@@ -1,6 +1,4 @@
-﻿-- =========================
--- TẠO DATABASE
--- =========================
+﻿
 IF DB_ID('LibraryDB') IS NOT NULL
     DROP DATABASE LibraryDB;
 GO
@@ -10,9 +8,7 @@ GO
 USE LibraryDB;
 GO
 
--- =========================
--- BẢNG USERS
--- =========================
+
 CREATE TABLE Users (
     username NVARCHAR(50) PRIMARY KEY,
     password NVARCHAR(50) NOT NULL,
@@ -21,9 +17,7 @@ CREATE TABLE Users (
 
 INSERT INTO Users VALUES ('admin', '123', 'Admin');
 
--- =========================
--- BẢNG SINH VIÊN
--- =========================
+
 CREATE TABLE SinhVien (
     id INT IDENTITY(1,1) PRIMARY KEY,
     studentId NVARCHAR(10) UNIQUE NOT NULL,
@@ -37,9 +31,7 @@ INSERT INTO SinhVien (studentId, name, class) VALUES
 ('SV03', N'Lê Văn C', 'KTTM1'),
 ('SV04', N'Trần Gia H', '23CN3');
 
--- =========================
--- BẢNG SÁCH
--- =========================
+
 CREATE TABLE Book (
     id INT IDENTITY(1,1) PRIMARY KEY,
     bookId NVARCHAR(10) UNIQUE NOT NULL,
@@ -56,9 +48,7 @@ INSERT INTO Book (bookId, title, author, quantity) VALUES
 ('S05', N'Truyện cười', N'Lê Thị Sáu', 5),
 ('S06', N'Truyện cổ tích', N'Nguyễn Văn M.', 7);
 
--- =========================
--- BẢNG MƯỢN SÁCH
--- =========================
+
 CREATE TABLE Borrow (
     id INT IDENTITY(1,1) PRIMARY KEY,
     studentId NVARCHAR(10) NOT NULL,
