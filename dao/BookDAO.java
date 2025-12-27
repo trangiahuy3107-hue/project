@@ -63,7 +63,7 @@ public class BookDAO {
         }
     }
 
-    // SEARCH (MỤC RIÊNG)
+    // SEARCH 
     public static void search(DefaultTableModel model, String keyword) {
         model.setRowCount(0);
         String sql = """
